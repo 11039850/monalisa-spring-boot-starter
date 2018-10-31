@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.tsc9526.monalisa.spring.boot.starter.MonalisaServiceAutoConfigure

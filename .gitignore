@@ -1,0 +1,8 @@
+/target/
+/test-output/
+/monalisa/
+/.settings/
+/.apt_generated/
+/.factorypath
+/.classpath
+/.project
