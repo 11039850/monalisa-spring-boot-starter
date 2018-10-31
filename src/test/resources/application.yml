@@ -1,15 +1,22 @@
 monalisa:
   db: 
-    cfg:
+    cfg: #default config
       debug: true
       datasource-class: C3p0DataSource 
       pool:
         initialPoolSize: 5
         minPoolSize:     30
-    mysql: 
+    mysql1: #db1 
       url:      jdbc:mysql://127.0.0.1:3306/test_monalisa?allowMultiQueries=true
       username: monalisa
       password: monalisa
        
       pool: 
         maxPoolSize: 100
+    mysql2: #db2 
+      url:      jdbc:mysql://127.0.0.1:3306/test_monalisa2?allowMultiQueries=true
+      username: monalisa
+      password: monalisa
+       
+      pool: 
+        maxPoolSize: 100     

@@ -15,11 +15,11 @@ public class MonalisaServiceAutoConfigureTest {
   
 	@Test
 	public void init() {
-		Set<String> tables = StaticCfgMysqlDB.DB.getTables();
+		Set<String> tables = Mysql1.DB.getTables();
 		System.out.println("tables: "+  tables ); 
 		
 		String table = tables.iterator().next();
-		System.out.println("==="+table+"===\r\n"+ StaticCfgMysqlDB.DB.selectList(10,0,"select * from "+table).format());
+		System.out.println("==="+table+"===\r\n"+ Mysql1.DB.selectList(10,0,"select * from "+table).format());
 	}
 	
 	

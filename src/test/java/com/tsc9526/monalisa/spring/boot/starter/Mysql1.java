@@ -6,8 +6,8 @@ import com.tsc9526.monalisa.orm.datasource.DBConfig;
 /**
  *  @author zzg.zhou(11039850@qq.com)
  */
-@DB(configName="mysql")
-public interface StaticCfgMysqlDB {    
-	public static DBConfig DB = DBConfig.fromClass(StaticCfgMysqlDB.class);
+@DB(configName="mysql1")
+public interface Mysql1 {  
+	public static DBConfig DB = DBConfig.fromClass(Mysql1.class);
 }
 
