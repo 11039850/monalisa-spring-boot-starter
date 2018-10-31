@@ -38,8 +38,8 @@ public interface Mysql1 {
 @DB(configName="mysql2")
 public interface Mysql2 {  
 	public static DBConfig DB = DBConfig.fromClass(Mysql2.class);
-}
-```
+ 
+``` 
 
 
 # Maven: 
