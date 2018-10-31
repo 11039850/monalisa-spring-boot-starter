@@ -12,7 +12,44 @@
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <maven.compiler.source>1.8</maven.compiler.source>
 	    <maven.compiler.target>1.8</maven.compiler.target>
+	    
+	    <repositoryURL>https://oss.sonatype.org/service/local/staging/deploy/maven2</repositoryURL>
+		<snapshotRepositoryURL>https://oss.sonatype.org/content/repositories/snapshots</snapshotRepositoryURL>
+		<maven.javadoc.skip>false</maven.javadoc.skip>
 	</properties>
+	
+	
+	<name>monalisa-orm</name>
+	<url>https://github.com/11039850/monalisa-spring-boot-starter</url>
+	<description>monalisa-spring-boot-starter</description>
+	<organization>
+		<name>zzg</name>
+		<url>http://www.tsc9526.com</url>
+	</organization>
+  
+	<scm>
+		<connection>scm:git:https://github.com/11039850/monalisa-spring-boot-starter.git</connection>
+		<developerConnection>scm:git:https://github.com/11039850/monalisa-spring-boot-starter.git</developerConnection>
+		<url>https://github.com/11039850/monalisa-spring-boot-starter.git</url>
+		<tag>tag-1.0.0</tag>
+	</scm>
+
+	
+	
+	<developers>
+		<developer>
+			<name>zzg.zhou</name>
+			<id>11039850@qq.com</id>
+			<email>11039850@qq.com</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License, Version 3.0</name>
+			<url>http://www.gnu.org/licenses/lgpl.html</url>
+		</license>
+	</licenses>
 	
     <dependencies>
     	<dependency>
@@ -55,4 +92,88 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
+    
+    <build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>META-INF</directory>
+				<targetPath>META-INF</targetPath>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+			 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<aggregate>true</aggregate>
+					<charset>UTF-8</charset>
+					<encoding>UTF-8</encoding>
+					<docencoding>UTF-8</docencoding>
+					<extdirs>${basedir}/libs</extdirs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+    
 </project>
